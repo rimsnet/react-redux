@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers/index'
 
-let store = createStore(reducers);
+const myLogger = (store) => (next) => (action) => {
+    console.log("Logged Action: ", action)
+    next(action)
+}
+
+let store = createStore(reducers, {}, applyMiddleware(myLogger));
+
+store.subscribe(() => { console.log("Store updated! ", store.getState()) })
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
