@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PostForm from './components/forms/PostForm';
 import ViewPosts from './components/views/ViewPosts';
+import CommentForm from './components/forms/CommentForm';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <hr />
         <PostForm />
         <ViewPosts />
+        <CommentForm />
       </div>
     );
   }
