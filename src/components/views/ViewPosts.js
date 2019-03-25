@@ -22,7 +22,7 @@ class ViewPosts extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        post: state
+        post: state.postReducer
     }
 }
 
