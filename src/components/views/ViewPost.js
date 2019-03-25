@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 class ViewPost extends React.Component {
 
@@ -10,6 +10,16 @@ class ViewPost extends React.Component {
         })
     }
 
+    handlerEdit = (id) => (event) => {
+        this.props.dispatch({
+            type: 'EDIT_POST',
+            id: id
+        })
+    }
+
+
+
+
     render() {
         return (
             <>
@@ -17,7 +27,7 @@ class ViewPost extends React.Component {
                     Title : {this.props.post.title} | Body : {this.props.post.body}
                     <p>
                         <button onClick={this.handlerDelete(this.props.post.id)}>delete</button>
-                        <button>edit</button>
+                        <button onClick={this.handlerEdit(this.props.post.id)}>edit</button>
                     </p>
                 </li>
             </>
