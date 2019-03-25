@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm install --save redux react-redux`
 
+## App Image
+
+![App Overview](App.jpeg?raw=true "App Overview")
+
 ## Available Scripts
 
 In the project directory, you can run:
